@@ -104,7 +104,7 @@ public class adapter_wisata extends RecyclerView.Adapter<adapter_wisata.TampilDa
             public void onClick(View v) {
 
                 final Dialog dialog=new Dialog(ctx);
-                dialog.setContentView(R.layout.fragment_input);
+                dialog.setContentView(R.layout.dialogwisata);
                 dialog.setTitle("Edit Wisata");
 
                 //Set Komponen

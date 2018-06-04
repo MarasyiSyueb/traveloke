@@ -81,7 +81,7 @@ public class adapter_hotel extends RecyclerView.Adapter<adapter_hotel.TampilData
                                 hapus(hot.getImgurl(),hot.getNama());
                             }
                         })
-                        .setNegativeButton("TIDAk",null)
+                        .setNegativeButton("TIDAK",null)
                         .show();
 
 
@@ -90,7 +90,7 @@ public class adapter_hotel extends RecyclerView.Adapter<adapter_hotel.TampilData
 
         //tombol edit
         holder.edit.setOnClickListener(new View.OnClickListener() {
-            private MaterialEditText txtNama, txtDeskripsi, txtHarga,txtLokasi;
+            private MaterialEditText txtNama, txtDeskripsi, txtHarga,txtLokasi, txtlong, txtlat;
             private TextView txt_tambah_gambar;
             private Button btnUpdate;
             private ImageButton btnTambah;
@@ -99,13 +99,15 @@ public class adapter_hotel extends RecyclerView.Adapter<adapter_hotel.TampilData
             public void onClick(View v) {
 
                 final Dialog dialog=new Dialog(ctx);
-                dialog.setContentView(R.layout.fragment_hotel);
+                dialog.setContentView(R.layout.dialoghotel);
                 dialog.setTitle("Edit Hotel");
 
                 //Set Komponen
                 txtNama=(MaterialEditText) dialog.findViewById(R.id.txt_namahotel);
                 txtLokasi=(MaterialEditText)dialog.findViewById(R.id.txt_lokasihotel);
                 txtHarga=(MaterialEditText) dialog.findViewById(R.id.txt_hargahotel);
+                txtlong =(MaterialEditText)dialog.findViewById(R.id.txt_long);
+                txtlat =(MaterialEditText)dialog.findViewById(R.id.txt_lat);
                 btnUpdate=(Button) dialog.findViewById(R.id.btn_submit_hotel);
                 btnTambah=(ImageButton) dialog.findViewById(R.id.btn_tambah_gambarhotel);
                 gambar=(ImageView)dialog.findViewById(R.id.image_hotel);
@@ -113,6 +115,8 @@ public class adapter_hotel extends RecyclerView.Adapter<adapter_hotel.TampilData
                 txtNama.setText(hot.getNama());
                 txtLokasi.setText(hot.getLokasi());
                 txtHarga.setText(hot.getHarga());
+                txtlong.setText(hot.getLongitude());
+                txtlat.setText(hot.getLatitude());
                 //Menghilangkan tulisan dan gambar
                 txt_tambah_gambar.setText("");
                 btnTambah.setImageBitmap(null);
@@ -130,6 +134,8 @@ public class adapter_hotel extends RecyclerView.Adapter<adapter_hotel.TampilData
                         taskMap.put("nama",txtNama.getText().toString());
                         taskMap.put("lokasi",txtLokasi.getText().toString());
                         taskMap.put("harga",txtHarga.getText().toString());
+                        taskMap.put("longitude",txtlong.getText().toString());
+                        taskMap.put("latitude",txtlat.getText().toString());
                         taskMap.put("imgurl",hot.getImgurl().toString());
                         data.child("Hotel").child(txtNama.getText().toString()).updateChildren(taskMap);
                         Toast.makeText(ctx,"Berhasil di Update",Toast.LENGTH_SHORT).show();

@@ -34,6 +34,22 @@
                 android:hint="Masukkan Lokasi"/>
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="highlight"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/txt_long"
+                app:met_floatingLabelText="Masukkan Longitude"
+                android:hint="Masukkan Longitude"/>
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="highlight"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/txt_lat"
+                app:met_floatingLabelText="Masukkan Latitude"
+                android:hint="Masukkan Latitude"/>
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
                 android:id="@+id/txt_harga"
                 android:layout_height="wrap_content"
                 app:met_floatingLabel="highlight"
@@ -50,13 +66,7 @@
                 app:met_floatingLabelText="Masukan deskripsi"
                 android:hint="Masukan deskripsi/sejarah"/>
 
-            <Button
-                android:id="@+id/btn_submit"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit" />
+
             <TextView
                 android:id="@+id/txt_tambah_gambar"
                 android:layout_width="wrap_content"
@@ -70,6 +80,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
                 android:src="@drawable/tambah" />
             <ImageView
                 android:id="@+id/image"
@@ -84,6 +95,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp" />
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit" />
         </LinearLayout>
 
     </LinearLayout>

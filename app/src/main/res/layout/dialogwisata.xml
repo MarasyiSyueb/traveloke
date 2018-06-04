@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.user.ppl_admindrawer.fragment_hotel">
+    tools:context="com.example.user.ppl_admindrawer.fragment_inputWis">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,15 +21,15 @@
                 android:layout_height="wrap_content"
                 app:met_floatingLabel="highlight"
                 android:layout_marginBottom="10dp"
-                android:id="@+id/txt_namahotel"
-                app:met_floatingLabelText="Masukkan hotel"
-                android:hint="Masukkan nama hotel"/>
+                android:id="@+id/txt_nama"
+                app:met_floatingLabelText="Masukkan wisata"
+                android:hint="Masukkan nama wisata"/>
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:met_floatingLabel="highlight"
                 android:layout_marginBottom="10dp"
-                android:id="@+id/txt_lokasihotel"
+                android:id="@+id/txt_lokasi"
                 app:met_floatingLabelText="Masukkan Lokasi"
                 android:hint="Masukkan Lokasi"/>
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -50,14 +50,28 @@
                 android:hint="Masukkan Latitude"/>
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
-                android:id="@+id/txt_hargahotel"
+                android:id="@+id/txt_harga"
                 android:layout_height="wrap_content"
                 app:met_floatingLabel="highlight"
                 android:layout_marginBottom="10dp"
                 app:met_floatingLabelText="Masukan harga"
                 android:inputType="number"
-                android:hint="Masukan Harga / malam"/>
+                android:hint="Masukan Harga"/>
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:id="@+id/txt_deskripsi"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="highlight"
+                android:layout_marginBottom="10dp"
+                app:met_floatingLabelText="Masukan deskripsi"
+                android:hint="Masukan deskripsi/sejarah"/>
 
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit" />
             <TextView
                 android:id="@+id/txt_tambah_gambar"
                 android:layout_width="wrap_content"
@@ -67,14 +81,14 @@
                 android:text="Tambahkan Gambar"/>
 
             <ImageButton
-                android:id="@+id/btn_tambah_gambarhotel"
+                android:id="@+id/btn_tambah_gambar"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="40dp"
                 android:src="@drawable/tambah" />
             <ImageView
-                android:id="@+id/image_hotel"
+                android:id="@+id/image"
 
                 android:layout_marginLeft="30dp"
                 android:layout_width="70dp"
@@ -86,12 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp" />
-            <Button
-                android:id="@+id/btn_submit_hotel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit" />
+
         </LinearLayout>
 
     </LinearLayout>

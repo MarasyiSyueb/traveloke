@@ -5,10 +5,13 @@ package com.example.user.ppl_admindrawer;
  */
 
 public class hotel_getset {
-    public hotel_getset(String nama, String lokasi, String harga, String imgurl) {
+    public hotel_getset(String nama, String lokasi, String harga, String longitude, String latitude,String imgurl) {
         this.nama = nama;
         this.lokasi = lokasi;
         this.harga = harga;
+
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.imgurl = imgurl;
     }
 
@@ -49,5 +52,21 @@ public class hotel_getset {
         this.imgurl = imgurl;
     }
 
-    private String nama,lokasi,harga,imgurl;
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    private String nama,lokasi,harga,imgurl,longitude,latitude;
 }

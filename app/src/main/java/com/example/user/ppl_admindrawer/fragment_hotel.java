@@ -38,7 +38,7 @@ import java.io.IOException;
 public class fragment_hotel extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    MaterialEditText txtnm,txtlok,txthtm;
+    MaterialEditText txtnm,txtlok,txthtm,txtlong, txtlat;
     ImageButton tmb;
     Button but;
     ImageView img;
@@ -47,7 +47,7 @@ public class fragment_hotel extends Fragment {
     String image_path;
     TextView path;
 
-    String Nama,Lokasi, Deskripsi, Harga;
+    String Nama,Lokasi, Deskripsi, Harga, Long, Lat;
     DatabaseReference databaseReference;
     // Create a storage reference from our app
     StorageReference storageRef;
@@ -74,6 +74,9 @@ public class fragment_hotel extends Fragment {
         txtnm = (MaterialEditText)view.findViewById(R.id.txt_namahotel);
         txtlok = (MaterialEditText)view.findViewById(R.id.txt_lokasihotel);
         txthtm = (MaterialEditText) view.findViewById(R.id.txt_hargahotel);
+        txtlong = (MaterialEditText)view.findViewById(R.id.txt_long);
+        txtlat = (MaterialEditText)view.findViewById(R.id.txt_lat);
+
 
         but = (Button)  view.findViewById(R.id.btn_submit_hotel);
         tmb=(ImageButton) view.findViewById(R.id.btn_tambah_gambarhotel);
@@ -132,13 +135,17 @@ public class fragment_hotel extends Fragment {
                         Nama=txtnm.getText().toString();
                         Lokasi=txtlok.getText().toString();
                         Harga=txthtm.getText().toString();
+                        Long = txtlong.getText().toString();
+                        Lat = txtlat.getText().toString();
                         progresDialog.dismiss();
                         Toast.makeText(getActivity(), "Tesimpan", Toast.LENGTH_SHORT);
-                        hotel_getset hotel_getset=new hotel_getset(Nama,Lokasi,Harga,taskSnapshot.getDownloadUrl().toString());
+                        hotel_getset hotel_getset=new hotel_getset(Nama,Lokasi,Harga,Long,Lat,taskSnapshot.getDownloadUrl().toString());
                         databaseReference.child("Hotel").child(Nama).setValue(hotel_getset);
                         txtnm.setText("");
                         txtlok.setText("");
                         txthtm.setText("");
+                        txtlong.setText("");
+                        txtlat.setText("");
                         img.setImageBitmap(null);
                     }
                 }).addOnFailureListener(new OnFailureListener() {

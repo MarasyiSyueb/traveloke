@@ -17,31 +17,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/wisata_simpan"
-        android:src="@drawable/kelapa"
-        android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/wisata_simpan"
+            android:layout_width="200dp"
+            android:layout_height="257dp"
+            android:layout_weight="1"
+            android:src="@drawable/wisata" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Input wisata"/>
+        android:text="Input wisata"
+        android:textStyle="bold"
+        android:paddingLeft="55dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="270dp"
-        android:id="@+id/wisata_tampil"
-        android:layout_weight="1"
-        android:src="@drawable/pohon" />
+
+        <ImageView
+            android:id="@+id/wisata_tampil"
+            android:layout_width="wrap_content"
+            android:layout_height="257dp"
+            android:layout_weight="1"
+            android:src="@drawable/editwisata" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Input wisata"/>
+        android:text="Edit wisata"
+        android:textStyle="bold"
+        android:paddingLeft="55dp"/>
     </LinearLayout>
 </LinearLayout>
     <LinearLayout
@@ -54,31 +60,37 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/hotel_simpan"
-                android:src="@drawable/input_hotel"
-                android:layout_weight="1"/>
+                android:layout_width="200dp"
+                android:layout_height="201dp"
+                android:layout_weight="1"
+                android:src="@drawable/hotel" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Input Hotel"/>
+                android:text="Input Hotel"
+                android:textStyle="bold"
+                android:paddingLeft="55dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1">
+
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
                 android:id="@+id/hotel_tampil"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
                 android:src="@drawable/edithotel" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit Hotel"/>
+                android:text="Edit Hotel"
+                android:textStyle="bold"
+                android:paddingLeft="55dp"/>
         </LinearLayout>
     </LinearLayout>
         <LinearLayout
@@ -92,7 +104,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="200dp"
+                    android:layout_width="213dp"
                     android:layout_height="200dp"
                     android:id="@+id/tampil_user"
                     android:src="@drawable/user"
@@ -100,7 +112,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Input Hotel"/>
+                    android:text="List User"
+                    android:textStyle="bold"
+                    android:paddingLeft="75dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -115,7 +129,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edit Hotel"/>
+                    android:text="Exit"
+                    android:textStyle="bold"
+                    android:paddingLeft="95dp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

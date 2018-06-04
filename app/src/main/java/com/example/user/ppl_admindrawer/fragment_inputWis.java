@@ -45,7 +45,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class fragment_inputWis extends Fragment {
 
 
-    MaterialEditText txtnm,txtlok,txthtm,txtdes;
+    MaterialEditText txtnm,txtlok,txthtm,txtdes,txtlong,txtlat;
     ImageButton tmb;
     Button but;
     ImageView img;
@@ -86,6 +86,8 @@ public class fragment_inputWis extends Fragment {
         txtlok = (MaterialEditText)view.findViewById(R.id.txt_lokasi);
         txthtm = (MaterialEditText) view.findViewById(R.id.txt_harga);
         txtdes = (MaterialEditText) view.findViewById(R.id.txt_deskripsi);
+        txtlong = (MaterialEditText) view.findViewById(R.id.txt_long);
+        txtlat = (MaterialEditText) view.findViewById(R.id.txt_lat);
         but = (Button)  view.findViewById(R.id.btn_submit);
         tmb=(ImageButton) view.findViewById(R.id.btn_tambah_gambar);
         path=(TextView) view.findViewById(R.id.txt_path);
@@ -137,6 +139,16 @@ public class fragment_inputWis extends Fragment {
             txtlok.setError("Error:Masukan Lokasi Wisata");
             txtlok.requestFocus();
 
+        } else if (txtlong.getText().toString().isEmpty()) {
+            Toast.makeText(getActivity(), "Longitude Wisata Belum Di Isi", Toast.LENGTH_SHORT);
+            txtdes.setError("Error:Masukan Longitude Wisata");
+            txtdes.requestFocus();
+
+        } else if (txtlat.getText().toString().isEmpty()) {
+            Toast.makeText(getActivity(), "Latitude Wisata Belum Di Isi", Toast.LENGTH_SHORT);
+            txtdes.setError("Error:Masukan Latitude Wisata");
+            txtdes.requestFocus();
+
         } else if (txthtm.getText().toString().isEmpty()) {
             Toast.makeText(getActivity(), "HTM Belum Di Isi", Toast.LENGTH_SHORT);
             txthtm.setError("Error:Masukan HTM");
@@ -174,7 +186,7 @@ public class fragment_inputWis extends Fragment {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progresDialog.dismiss();
-                        //tampoilkan pesan eror
+                        //tampilkan pesan eror
                         Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>(){
